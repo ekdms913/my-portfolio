@@ -1,0 +1,281 @@
+요청하신 내용을 반영하여, 챕터 5(완성 예시 영역)의 이미지 경로와 파일명이 첨부해주신 사진들과 정확히 매칭되도록 수정된 전체 HTML 코드를 작성했습니다.
+
+```html
+<!DOCTYPE html>
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8e9e8">
+<title>셀프 네일 입문자를 위한 실전 가이드</title>
+<style>
+:root{
+  --ink:#342b2d; --muted:#786d70; --pink:#d98791; --rose:#f4dadd;
+  --pale:#fff8f7; --cream:#fbf4ec; --line:#eadcda; --white:#fff;
+  --green:#718c78; --shadow:0 12px 34px rgba(87,54,59,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fffdfc;color:var(--ink);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.7}
+button{font:inherit}
+a{color:inherit}
+.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(255,253,252,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
+.brand{font-weight:800;letter-spacing:-.04em;color:#6c4149;text-decoration:none}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap}
+.navlinks a{text-decoration:none;font-size:.88rem;color:var(--muted)}
+.navlinks a:hover{color:#a94f61}
+.hero{padding:70px 0 56px;background:linear-gradient(135deg,#fff5f4 0%,#fbefeb 55%,#f7e5e5 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:34px}
+.eyebrow{display:inline-block;padding:5px 12px;border-radius:99px;background:#fff;color:#a45e68;font-size:.78rem;font-weight:700;letter-spacing:.08em}
+h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.17;letter-spacing:-.06em;margin:18px 0}
+h1 span{color:#c56f7b}
+.lead{font-size:1.08rem;color:#685b5e;max-width:570px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 21px;background:#b96876;color:white;text-decoration:none;font-weight:700;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);background:#a95665}
+.btn.secondary{background:white;color:#995764;border:1px solid #e8c9cd}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.hero-art{background:rgba(255,255,255,.65);border:1px solid white;border-radius:32px;padding:20px;box-shadow:var(--shadow)}
+.hero-art svg{display:block;width:100%;height:auto}
+section{padding:66px 0;scroll-margin-top:82px}
+section.soft{background:var(--pale)}
+.section-head{margin-bottom:28px}
+.kicker{color:#b36b76;font-size:.8rem;font-weight:800;letter-spacing:.12em}
+h2{font-size:clamp(1.7rem,3vw,2.35rem);letter-spacing:-.045em;line-height:1.3;margin:7px 0 8px}
+.section-desc{color:var(--muted);margin:0;max-width:680px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:white;border:1px solid var(--line);border-radius:20px;padding:21px;box-shadow:var(--shadow)}
+.card .num{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#fae8e9;color:#a95765;font-weight:800}
+.card h3{margin:12px 0 5px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.94rem}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.check{display:flex;align-items:flex-start;gap:11px;background:white;border:1px solid var(--line);padding:14px 16px;border-radius:14px}
+.check input{accent-color:#bd7180;width:18px;height:18px;margin-top:5px;flex:none}
+.check small{display:block;color:var(--muted);font-size:.83rem}
+.progressbox{margin-top:18px;padding:14px 17px;background:#fff;border-radius:14px;border:1px solid var(--line);color:var(--muted)}
+.progressbar{height:8px;background:#f1e5e4;border-radius:99px;overflow:hidden;margin-top:8px}
+.progressbar span{display:block;height:100%;width:0;background:#bd7180;transition:width .25s}
+.steps{display:grid;gap:18px}
+.step{display:grid;grid-template-columns:150px 1fr;gap:22px;background:white;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
+.step-label{background:#fff1f0;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;color:#a85f6a}
+.step-label strong{font-size:1.9rem;line-height:1.2}
+.step-label span{font-size:.85rem;font-weight:700}
+.step h3{margin:0 0 7px;font-size:1.2rem}
+.step p{margin:0 0 10px;color:var(--muted)}
+.tip{padding:11px 14px;background:#fbf5ef;border-left:3px solid #d6a58d;border-radius:8px;font-size:.9rem}
+.step ul{padding-left:20px;margin:8px 0;color:#594f51}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sample{min-height:180px;border-radius:18px;background:white;border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;text-align:center;padding:18px;box-shadow:var(--shadow);overflow:hidden}
+.sample img{width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:12px}
+.sample strong{font-size:1rem;margin-top:4px}
+.sample small{color:var(--muted);margin-top:2px}
+.sample .source-text{font-size:0.75rem;color:#b38b93;margin-top:4px}
+.notice{border-radius:20px;background:#fff3e9;border:1px solid #f0dfcd;padding:20px 22px}
+.notice h3{margin:0 0 8px;color:#8d5c42}
+.notice ul{margin:0;padding-left:20px;color:#65554d}
+.about{background:#342b2d;color:#fff8f7}
+.about .kicker{color:#f1b6bd}
+.about .section-desc{color:#dfcecf}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.about-box{border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:20px;background:rgba(255,255,255,.05)}
+.about-box h3{margin:0 0 8px}
+.about-box p{margin:0;color:#e8dada;font-size:.93rem}
+footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.85rem;background:#fff}
+@media(max-width:760px){
+ .nav{align-items:flex-start;padding:12px 0;flex-direction:column}
+ .navlinks{gap:10px 14px}
+ .hero{padding:48px 0 40px}
+ .hero-grid{grid-template-columns:1fr}
+ .hero-art{max-width:430px;margin:auto}
+ section{padding:50px 0}
+ .cards,.gallery{grid-template-columns:1fr}
+ .checklist{grid-template-columns:1fr}
+ .step{grid-template-columns:1fr;gap:12px}
+ .step-label{flex-direction:row;gap:10px;justify-content:flex-start;padding:12px 16px}
+ .step-label strong{font-size:1.35rem}
+ .about-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">SELF NAIL GUIDE</a>
+    <nav class="navlinks" aria-label="주요 메뉴">
+      <a href="#prepare">준비물</a><a href="#steps">따라 하기</a><a href="#finish">완성 팁</a><a href="#about">작품 안내</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">FIRST SELF NAIL · BEGINNER GUIDE</span>
+      <h1>처음이라도 괜찮아,<br><span>셀프 네일</span> 시작하기</h1>
+      <p class="lead">셀프네일을 처음 하는 사람도 준비부터 마무리까지 차근차근 따라 할 수 있도록 정리한 초보자용 실전 가이드입니다.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#prepare">시작 전 준비하기 <span aria-hidden="true">→</span></a>
+        <a class="btn secondary" href="#steps">5단계 과정 보기</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="파스텔 핑크 네일 일러스트">
+      <svg viewBox="0 0 440 330" role="img" aria-labelledby="arttitle">
+        <title id="arttitle">부드러운 핑크 톤의 자연스러운 손과 네일 일러스트</title>
+        <defs>
+          <lineargradient id="skin" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f8d8cb"></stop><stop offset="1" stop-color="#eab8ad"></stop>
+          </lineargradient>
+          <lineargradient id="nailpolish" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f9e8e2"></stop><stop offset="1" stop-color="#d98b98"></stop>
+          </lineargradient>
+        </defs>
+        <ellipse cx="222" cy="286" rx="142" ry="17" fill="#e8d0ce" opacity=".7"></ellipse>
+        <g transform="translate(18 1) rotate(-7 220 170)">
+          <!-- palm and fingers -->
+          <path d="M135 269 C118 251 112 222 116 193 L126 126 C129 107 142 99 154 105 C165 110 165 123 162 140 L153 187 L164 95 C166 75 180 67 193 73 C205 79 204 93 201 110 L190 177 L205 81 C209 62 224 56 237 64 C249 71 246 86 243 102 L230 180 L251 103 C256 85 271 81 283 90 C294 99 289 113 284 129 L260 205 C276 190 291 183 302 192 C314 202 306 218 296 232 L267 270 C247 295 211 306 176 295 C158 290 145 281 135 269Z" fill="url(#skin)" stroke="#d79f96" stroke-width="2.2" stroke-linejoin="round"></path>
+          <!-- subtle palm lines -->
+          <path d="M151 225 C177 236 199 237 219 228 M166 255 C189 263 216 259 234 247" fill="none" stroke="#d99e96" stroke-width="2" opacity=".55" stroke-linecap="round"></path>
+          <!-- nail beds -->
+          <path d="M133 130 C134 115 143 108 151 112 C160 116 158 129 155 145 L148 166 C137 163 131 150 133 130Z" fill="url(#nailpolish)" stroke="#d38c95" stroke-width="1.8"></path>
+          <path d="M172 103 C174 87 184 80 192 85 C201 90 198 103 194 119 L185 148 C174 143 169 127 172 103Z" fill="#d98b98" stroke="#c77a87" stroke-width="1.8"></path>
+          <path d="M214 91 C218 76 229 72 237 79 C245 86 240 99 235 115 L222 144 C212 137 209 112 214 91Z" fill="#f4d7ce" stroke="#d79a9c" stroke-width="1.8"></path>
+          <path d="M257 116 C263 102 275 99 282 107 C289 116 281 129 273 143 L255 165 C247 154 250 131 257 116Z" fill="#c97888" stroke="#b96c7d" stroke-width="1.8"></path>
+          <!-- tiny shine details -->
+          <path d="M141 120 Q145 114 150 118 M181 93 Q186 87 191 91 M224 86 Q230 81 235 86 M268 119 Q274 112 279 117" fill="none" stroke="#fff8f5" stroke-width="2.2" stroke-linecap="round" opacity=".9"></path>
+        </g>
+        <circle cx="350" cy="67" r="23" fill="#f3d9da"></circle>
+        <path d="M350 54 C356 62 359 67 350 80 C341 67 344 62 350 54Z" fill="#cf8390"></path>
+        <path d="M75 235 C88 218 105 219 115 236 C99 248 85 249 75 235Z" fill="#e9bdba" opacity=".8"></path>
+        <circle cx="335" cy="255" r="5" fill="#d98b98" opacity=".65"></circle>
+        <circle cx="365" cy="226" r="3" fill="#d98b98" opacity=".55"></circle>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="prepare" class="soft">
+ <div class="wrap">
+  <div class="section-head">
+    <div class="kicker">STEP 01 · BEFORE YOU START</div>
+    <h2>먼저, 준비물을 확인해요</h2>
+    <p class="section-desc">시작하기 전에 필요한 도구를 준비하고 하나씩 체크해 보세요. 가지고 있는 제품을 먼저 확인하면 불필요한 구매를 줄일 수 있어요.</p>
+  </div>
+  <div class="checklist" id="checklist">
+    <label class="check"><input type="checkbox"><span><strong>네일 파일</strong><small>손톱 길이와 모양을 정리할 때 사용해요.</small></span></label>
+    <label class="check"><input type="checkbox"><span><strong>니퍼</strong><small>큐티클을 제거해줘요.</small></span></label>
+    <label class="check"><input type="checkbox"><span><strong>베이스 코트</strong><small>컬러를 바르기 전 제품 사용법을 확인해요.</small></span></label>
+    <label class="check"><input type="checkbox"><span><strong>네일 컬러</strong><small>원하는 색상의 네일 제품을 준비해요.</small></span></label>
+    <label class="check"><input type="checkbox"><span><strong>탑 코트</strong><small>마무리 단계에 사용하는 제품이에요.</small></span></label>
+    <label class="check"><input type="checkbox"><span><strong>젤램프</strong><small>젤 제품을 사용할 때 제품 설명에 맞춰 경화해요.</small></span></label>
+    <label class="check"><input type="checkbox"><span><strong>리무버와 화장솜</strong><small>제품 종류에 맞는 제거 방법을 확인해 준비해요.</small></span></label>
+  </div>
+  <div class="progressbox">
+    <strong id="progressText">준비물 0 / 6개 확인 완료</strong>
+    <div class="progressbar"><span id="progressBar"></span></div>
+  </div>
+ </div>
+</section>
+
+<section id="steps">
+ <div class="wrap">
+  <div class="section-head">
+    <div class="kicker">STEP 02–04 · HOW TO</div>
+    <h2>기초부터 마무리까지, 5단계</h2>
+    <p class="section-desc">각 단계의 설명을 읽고 천천히 진행해 보세요. 제품마다 사용법이 다를 수 있으니 실제 제품의 안내 사항을 먼저 확인하는 것이 중요합니다.</p>
+  </div>
+  <div class="steps">
+    <article class="step">
+      <div class="step-label"><strong>01</strong><span>손과 도구 준비</span></div>
+      <div><h3>깨끗하고 편안한 환경 만들기</h3><p>손을 깨끗이 씻고 물기를 충분히 말린 뒤, 필요한 도구를 손이 닿는 곳에 정리해요.</p><div class="tip">TIP · 환기가 잘되는 곳에서 작업하고, 제품이 피부나 눈에 닿지 않도록 주의해요.</div></div>
+    </article>
+    <article class="step">
+      <div class="step-label"><strong>02</strong><span>손톱 모양 정리</span></div>
+      <div><h3>원하는 모양으로 부드럽게 다듬기</h3><p>파일을 이용해 손톱 끝을 한 방향으로 부드럽게 정리해요. 손톱 길이와 모양은 본인이 편안하게 느끼는 정도로 맞춰 주세요.</p><div class="tip">TIP · 큐티클을 무리하게 자르거나 손톱 표면을 과하게 갈지 않도록 해요.</div></div>
+    </article>
+    <article class="step">
+      <div class="step-label"><strong>03</strong><span>베이스 바르기</span></div>
+      <div><h3>컬러를 바르기 전 기초 단계</h3><p>제품 설명을 확인한 뒤 베이스 코트를 얇고 고르게 발라요. 다음 단계로 넘어가기 전 제품 안내에 적힌 건조 방법을 따라 주세요.</p><div class="tip">TIP · 제품을 한 번에 많이 바르기보다 적당량을 얇게 펴 바르는 것이 좋아요.</div></div>
+    </article>
+    <article class="step">
+      <div class="step-label"><strong>04</strong><span>컬러 바르기</span></div>
+      <div><h3>중앙부터 양옆까지 천천히</h3><p>브러시에 적당량을 묻혀 손톱 중앙에서 끝 방향으로 바르고, 양옆도 빈 곳이 없도록 정리해요. 필요하면 제품 안내에 따라 얇게 덧발라요.</p><div class="tip">TIP · 피부에 제품이 묻었다면 제품 설명에 맞는 방법으로 정리하고, 피부에 닿은 채로 굳히지 않도록 해요.</div></div>
+    </article>
+    <article class="step">
+      <div class="step-label"><strong>05</strong><span>마무리와 확인</span></div>
+      <div><h3>탑 코트와 최종 마무리</h3><p>탑코트는 젤램프에 60초 큐어링 해주는 게 제일 좋아요!</p><div class="tip">제품과 젤램프에 따라 권장 큐어링 시간이 다를 수 있으니, 사용 중인 제품의 안내 시간을 먼저 확인해 주세요.</div></div>
+    </article>
+  </div>
+ </div>
+</section>
+
+<section id="finish" class="soft">
+ <div class="wrap">
+  <div class="section-head">
+    <div class="kicker">STEP 05 · FINISH</div>
+    <h2>완성 예시와 초보자 팁</h2>
+    <p class="section-desc">처음부터 복잡한 디자인을 시도하기보다 단색이나 간단한 포인트부터 시작해 보세요.</p>
+  </div>
+  <div class="gallery">
+    <div class="sample">
+      <img src="nail1.jpeg" alt="누드 네일">
+      <strong>누드 네일</strong>
+      <small>차분하고 깔끔한 기본 컬러</small>
+      <span class="source-text">출처-핀터레스트</span>
+    </div>
+    <div class="sample">
+      <img src="nail2.jpeg" alt="자석 네일">
+      <strong>자석 네일</strong>
+      <small>빛의 각도에 따라 다양한 분위기 표현</small>
+    </div>
+    <div class="sample">
+      <img src="nail3.jpeg" alt="디자인 아트">
+      <strong>디자인 아트</strong>
+      <small>자신이 하고싶은 디자인을 표현할 수 있는 네일</small>
+    </div>
+  </div>
+  <div style="height:18px"></div>
+  <div class="notice">
+    <h3>처음 셀프네일을 할 때 기억할 점</h3>
+    <ul>
+      <li>제품을 사용하기 전 사용 설명과 주의사항을 꼭 확인해요.</li>
+      <li>작업 공간을 환기하고, 제품이 피부에 닿지 않도록 주의해요.</li>
+      <li>도구는 사용 전후 깨끗하게 관리하고 다른 사람과 함께 사용할 때는 위생에 신경 써요.</li>
+      <li>손톱이나 피부에 불편함이 생기면 무리해서 계속하지 않아요.</li>
+      <li>처음에는 간단한 컬러부터 연습하고 자신에게 맞는 속도로 진행해요.</li>
+    </ul>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="about">
+ <div class="wrap">
+  <div class="section-head">
+    <div class="kicker">ABOUT THIS PROJECT</div>
+    <h2>이 작품에 대하여</h2>
+    <p class="section-desc">서비스의 제작 과정과 AI 활용 범위를 안내합니다.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-box"><h3>제작 정보</h3><p><strong>서비스명</strong> 셀프 네일 입문자를 위한 실전 가이드<br><strong>제작</strong> 정다은 · 뷰티케어학과<br><strong>과목</strong> AI와 디지털 아츠<br><strong>제작일</strong> 2026년 11월 27일</p></div>
+    <div class="about-box"><h3>AI 활용 및 출처</h3><p>주제와 전체 구성은 기획자의 제안서를 바탕으로 정리했습니다. 웹페이지 코드와 일부 문장 구성에는 생성형 AI를 보조적으로 활용했으며, 최종 내용과 화면은 직접 확인하고 수정하는 것을 전제로 합니다. 별도의 외부 사진·음원은 사용하지 않았으며, 네일 예시 그래픽은 CSS와 SVG로 직접 구성했습니다.</p></div>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap">처음 하는 셀프네일, 나에게 맞는 속도로 차근차근 시작해요. · SELF NAIL GUIDE</div></footer>
+
+<script>
+const checks=[...document.querySelectorAll('#checklist input')];
+const progressText=document.getElementById('progressText');
+const progressBar=document.getElementById('progressBar');
+function updateProgress(){
+  const count=checks.filter(c=>c.checked).length;
+  progressText.textContent=`준비물 ${count} / ${checks.length}개 확인 완료`;
+  progressBar.style.width=`${count/checks.length*100}%`;
+}
+checks.forEach(c=>c.addEventListener('change',updateProgress));
+</script>
+
+</body></html>
+
+```
